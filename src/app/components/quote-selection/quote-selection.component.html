@@ -1,0 +1,13 @@
+<div *ngIf="selectedQuote" class="card card-body mb-3 align-items-center">
+    <form>
+      <div class="form-group">
+       <h1> {{ selectedQuote ? (selectedQuote.premium | currency:'USD') : "0" }} </h1>
+      </div>
+      <button type="submit" 
+      class="btn btn-success" 
+      [disabled]="!(selectedQuote && selectedQuote.premium)">
+        {{ selectedQuote && selectedQuote.premium ? 'Apply for coverage...' : 'Select a Plan' }}
+      </button>
+      
+    </form>
+</div>

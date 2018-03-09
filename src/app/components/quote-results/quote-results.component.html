@@ -1,0 +1,26 @@
+<app-quote-zipcode (quotesFound)="foundQuotes($event)" (searchStarted)="searchStart($event)"></app-quote-zipcode>
+
+<!-- Marketing messaging and featurettes
+    ==================================================collapse multi-collapse  -->
+    <div class="card">
+    <div #result id="result" [ngClass]="{'collapse show':hasQuotes}">
+        <!-- Three columns of text below the carousel -->
+        <div class="container marketing">
+        <!-- Three columns of text below the carousel 
+        text:
+        Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+        -->
+          <div class="row">    
+            <div class="col-lg-4" *ngFor="let quoteResult of quoteResults">
+              <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+              <h2>{{quoteResult.planName}}</h2>
+              <p>{{quoteResult.planDescription}}</p>
+              <p><a class="btn btn-secondary" role="button" (click)="selectPremium(quoteResult)">Select &raquo;</a></p>
+              <b>{{quoteResult.premium | currency:'USD'}}</b>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<app-quote-selection [(selectedQuote)]="selectedQuote"></app-quote-selection>
+    
