@@ -1,0 +1,25 @@
+<mat-card>
+<form [formGroup]="stepControl">
+        <div class="form-group form-inline">
+          <input type="text" 
+            class="form-control mb-2 mr-sm-2 mb-sm-0" 
+            placeholder="Enter a zipcode..."
+            #findZip>
+
+          <input type="button" 
+            value="Get Quote" class="btn btn-primary"
+            (click)="getQuotes(findZip.value)" >
+        </div>
+    <!--
+      <mat-card-actions>
+          <button mat-raised-button matStepperNext class="nav-btn">Next</button>
+      </mat-card-actions>
+    -->
+
+      <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+       </div>
+
+</form>
+</mat-card>
