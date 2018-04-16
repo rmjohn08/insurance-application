@@ -52,14 +52,16 @@
 	"name": "Question 3",
 	"description":"Question primus optimus",
 	"controls": [
-		{"inputType":"text",
+		{"inputType":"custom",
 		"label":"",
         "regex":"",
         "required":false,
-        "name":"zipcode",
+        "name":"finish",
         "text":"Congratulations",
         "placeHolder":"",
-        "classStyles":""
+        "classStyles":"",
+        "html":"<div><h1>Finished</h1><h4>Thank you for using the site</h4></div>"
+     
         }
         ]
     }
