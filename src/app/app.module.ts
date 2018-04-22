@@ -14,9 +14,20 @@ import { QuoteMainComponent } from './components/quote-main/quote-main.component
 import { QuoteService } from './services/quote.service';
 // Material Desing imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatFormFieldModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule,
+   MatIconModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatStepperModule } from  '@angular/material/stepper';
 import { StepComponentComponent } from './components/step-component/step-component.component';
+import { QuestionsService } from './services/questions.service';
+import { DomesticAddressComponent } from './components/lib/domestic-address/domestic-address.component';
+import { IntAddressComponent } from './components/lib/int-address/int-address.component';
+import { ApplicantNameComponent } from './components/lib/applicant-name/applicant-name.component';
+import { ReplacementComponent } from './components/lib/replacement/replacement.component';
+import { MethodPaymentComponent } from './components/lib/method-payment/method-payment.component';
+import { ReviewComponent } from './components/lib/review/review.component';
+import { BenefitiariesComponent } from './components/lib/benefitiaries/benefitiaries.component';
+import { FormComponentService } from './services/form-component.service';
+import { FormControlValidatorService } from './services/form-control-validator.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +37,14 @@ import { StepComponentComponent } from './components/step-component/step-compone
     QuoteResultsComponent,
     QuoteSelectionComponent,
     QuoteMainComponent,
-    StepComponentComponent
+    StepComponentComponent,
+    DomesticAddressComponent,
+    IntAddressComponent,
+    ApplicantNameComponent,
+    ReplacementComponent,
+    MethodPaymentComponent,
+    ReviewComponent,
+    BenefitiariesComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -38,9 +56,10 @@ import { StepComponentComponent } from './components/step-component/step-compone
     MatToolbarModule,
     MatIconModule,
     MatStepperModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
-  providers: [QuoteService],
+  providers: [QuoteService, QuestionsService, FormComponentService, FormControlValidatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

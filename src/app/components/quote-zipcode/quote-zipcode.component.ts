@@ -24,8 +24,6 @@ export class QuoteZipcodeComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
   getQuotes(zip) {
     this.searchStarted.emit();
     this.quoteService.getQuote(zip)

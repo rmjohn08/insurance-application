@@ -1,0 +1,82 @@
+{
+  "questions": [
+    {
+    "number": 1,
+    "next": 1,
+	"prev": null,
+    "name": "Personal Info",
+	"description":"Personal Info",
+	"controls": [
+            {
+                "component":"applicant-name",
+                "version":"1.0"
+            }
+	    ]
+    },
+    {
+    "number": 2,
+    "next": 2,
+	"prev": 1,
+    "name": "Residence",
+	"description":"Residence",
+	"controls": [
+            {
+                "component":"domestic-address",
+                "version":"1.0"
+            }
+	    ]
+    },
+    {
+    "number": 3,
+    "next": 4,
+	"prev": 2,
+    "name": "Replacement",
+	"description":"Replacement",
+	"controls": [
+            {
+                "component":"replacement",
+                "version":"1.0"
+            }
+	    ]
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
+
+components:
+- address 
+    street number, street name, pobox, line2, city, state,  zip
+
+- int address 
+    street number, street name, pobox, line2, city, province, country, postalcode
+
+- name:
+    prefix, firstname, middleinitial, lastname,suffix
+
+- replacement insurance
+    other insurance  - if yes, other insurance
+
+- method payment
+    bank, creditcard, billmelater
+
+- ach payment
+    name on card, type account, bank routing, bank account
+
+- cc payment
+    name on card, cc type, cc number 
+
+- beneficiary
+    name, relationship, percentage
+
+- review
+    - terms agreement, producer number, city signed, comments
+
+- quote
+(complex control with multiple steps ? )
+
+having a definition of each component in a json style format (metadata)
+page > component > control 
+** customized control
+

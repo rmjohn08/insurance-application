@@ -1,25 +1,28 @@
 <mat-card>
-<form [formGroup]="stepControl">
-        <div class="form-group form-inline">
-          <input type="text" 
-            class="form-control mb-2 mr-sm-2 mb-sm-0" 
-            placeholder="Enter a zipcode..."
-            #findZip>
-
-          <input type="button" 
-            value="Get Quote" class="btn btn-primary"
-            (click)="getQuotes(findZip.value)" >
+<form >
+    <div class="col-lg-12" *ngFor="let q of controlQuestion.value.controls">
+        <div *ngIf="q.component == 'applicant-name' " class="form-group form-inline">
+            <app-applicant-name [(stepControl)]="stepControl" ></app-applicant-name>
         </div>
+
+        <div *ngIf="q.component == 'domestic-address' " class="form-group form-inline">
+            <app-domestic-address></app-domestic-address>
+        </div>
+
+        <div *ngIf="q.component == 'replacement' " class="form-group form-inline">
+            <app-replacement></app-replacement>
+        </div>
+
+    </div>
     <!--
       <mat-card-actions>
           <button mat-raised-button matStepperNext class="nav-btn">Next</button>
       </mat-card-actions>
     -->
-
-      <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-       </div>
+    <mat-card-actions>
+        <button *ngIf="controlQuestion.value.prev" mat-button matStepperPrevious >Back</button>
+        <button *ngIf="controlQuestion.value.next" mat-button matStepperNext (click)="goNext()">Next</button>
+    </mat-card-actions>
 
 </form>
 </mat-card>
