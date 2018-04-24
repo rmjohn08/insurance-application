@@ -41,10 +41,72 @@ export class FormComponentService {
     
   ];
 
+  private domesticAddress: ControlModel[] = [
+    {   
+      "inputType":"text",
+	    "label":"Address",
+      "regex":"",
+      "required":true,
+      "name":"address",
+      "Key":"UWQ_Applicant_Residence_Address",
+      "text":"",
+      "placeHolder":"Address",
+      "classStyles":""
+    },
+    {   
+      "inputType":"text",
+	    "label":"Address 2",
+      "regex":"",
+      "required":false,
+      "name":"address2",
+      "Key":"UWQ_Applicant_Residence_Address2",
+      "text":"",
+      "placeHolder":"Address2",
+      "classStyles":""
+    },
+    {   
+      "inputType":"text",
+	    "label":"city",
+      "regex":"",
+      "required":true,
+      "name":"city",
+      "Key":"UWQ_Applicant_Residence_City",
+      "text":"",
+      "placeHolder":"City",
+      "classStyles":""
+    },
+    {   
+      "inputType":"text",
+      "label":"state",
+      "regex":"",
+      "required":true,
+      "name":"state",
+      "Key":"UWQ_Applicant_Residence_State",
+      "text":"",
+      "placeHolder":"State",
+      "classStyles":""
+    },
+    {   
+      "inputType":"text",
+	    "label":"Zipcode",
+      "regex":"",
+      "required":true,
+      "name":"zipcode",
+      "Key":"UWQ_Applicant_Residence_Zipcode",
+      "text":"",
+      "placeHolder":"Zipcode",
+      "classStyles":""
+    }
+    
+  ];
+
   private componentModels: Map<string, ControlModel> = new Map<string,ControlModel>();
   public APPLICANT_NAME: string = "applicantName";
+  public DOMESTIC_ADDRESS: string = "domesticAddress";
+  
   constructor() { 
-      this.componentModels[this.APPLICANT_NAME]= this.applicantNameModel;
+      this.componentModels[this.APPLICANT_NAME] = this.applicantNameModel;
+      this.componentModels[this.DOMESTIC_ADDRESS] = this.domesticAddress;
       //... more models
 
   }

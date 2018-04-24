@@ -6,7 +6,7 @@
         </div>
 
         <div *ngIf="q.component == 'domestic-address' " class="form-group form-inline">
-            <app-domestic-address></app-domestic-address>
+            <app-domestic-address [(stepControl)]="stepControl"></app-domestic-address>
         </div>
 
         <div *ngIf="q.component == 'replacement' " class="form-group form-inline">
@@ -20,8 +20,8 @@
       </mat-card-actions>
     -->
     <mat-card-actions>
-        <button *ngIf="controlQuestion.value.prev" mat-button matStepperPrevious >Back</button>
-        <button *ngIf="controlQuestion.value.next" mat-button matStepperNext (click)="goNext()">Next</button>
+        <button *ngIf="controlQuestion.value.prev" mat-raised-button matStepperPrevious >Back</button>
+        <button *ngIf="controlQuestion.value.next" mat-raised-button matStepperNext (click)="goNext()">Next</button>
     </mat-card-actions>
 
 </form>

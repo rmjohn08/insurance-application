@@ -21,16 +21,9 @@ export class QuoteMainComponent implements OnInit {
   }
 
   ngOnInit() {
-    
-    // 
-    /*this.myGroups = controls.map( (it) => {
-      return this.formBuilder.group({
-        completed: ['', Validators.required]
-      });
-    });*/
-    console.info('Done setting up controllers...');
+    // this initially sets the steps(number screens)
     this.getQuestions();
-
+    console.info('Done setting up controllers...');
   }
 
   getQuestions () {
