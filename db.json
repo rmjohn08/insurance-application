@@ -4,68 +4,43 @@
     "number": 1,
     "next": 1,
 	"prev": null,
-	"name": "Question 1",
-	"description":"Question sjsj sjsjs ssll",
+    "name": "Personal Info",
+	"description":"Personal Info",
 	"controls": [
-		{"inputType":"text",
-		"label":"Zipcode",
-        "regex":"",
-        "required":false,
-        "name":"zipcode",
-        "text":"",
-        "placeHolder":"Enter zipcode",
-        "classStyles":""
-        },
-        {"inputType":"button",
-		"label":"",
-        "regex":"",
-        "required":false,
-        "name":"btn",
-        "text":"Search...",
-        "placeHolder":"",
-        "classStyles":""
-        }
+            {
+                "component":"applicant-name",
+                "version":"1.0"
+            }
 	    ]
     },
     {
     "number": 2,
-    "next": 3,
+    "next": 2,
 	"prev": 1,
-	"name": "Question 2",
-	"description":"Question primus optimus",
+    "name": "Residence",
+	"description":"Residence",
 	"controls": [
-		{"inputType":"number",
-		"label":"Age",
-        "regex":"",
-        "required":false,
-        "name":"age",
-        "text":"",
-        "placeHolder":"Enter age",
-        "classStyles":""
-        }
-        ]
+            {
+                "component":"domestic-address",
+                "version":"1.0"
+            }
+	    ]
     },
     {
     "number": 3,
     "next": null,
 	"prev": 2,
-	"name": "Question 3",
-	"description":"Question primus optimus",
+    "name": "Replacement",
+	"description":"Replacement",
 	"controls": [
-		{"inputType":"text",
-		"label":"",
-        "regex":"",
-        "required":false,
-        "name":"zipcode",
-        "text":"Congratulations",
-        "placeHolder":"",
-        "classStyles":""
-        }
-        ]
+            {
+                "component":"replacement",
+                "version":"1.0"
+            }
+	    ]
     }
   ],
   "profile": {
     "name": "typicode"
   }
 }
-
