@@ -40,6 +40,47 @@
 	    ]
     }
   ],
+  "controlModels": [
+    { 
+    "name":"applicantName", 
+    "controls":[
+        {   
+        "inputType":"text",
+        "label":"First Name",
+        "regex":"",
+        "required":true,
+        "name":"firstName",
+        "Key":"UWQ_Applicant_First_Name",
+        "text":"",
+        "placeHolder":"First Name",
+        "classStyles":""
+        },
+        {   
+        "inputType":"text",
+        "label":"Middle Name",
+        "regex":"",
+        "required":false,
+        "name":"middleName",
+        "Key":"UWQ_Applicant_Middle_Name",
+        "text":"",
+        "placeHolder":"Middle Name",
+        "classStyles":""
+        },
+        {   
+        "inputType":"text",
+        "label":"Last Name",
+        "regex":"",
+        "required":true,
+        "name":"lastName",
+        "Key":"UWQ_Applicant_Last_Name",
+        "text":"",
+        "placeHolder":"Last Name",
+        "classStyles":""
+        }
+        ]
+    }
+    
+  ],
   "profile": {
     "name": "typicode"
   }

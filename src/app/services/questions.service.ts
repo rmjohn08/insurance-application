@@ -9,15 +9,25 @@ export class QuestionsService {
   private url: string;
 
   constructor(private http: Http) { 
-    this.url = "https://my-json-server.typicode.com/rmjohn08/insurance-application/questions/";
+    this.url = "https://my-json-server.typicode.com/rmjohn08/insurance-application/";
   }
 
   getQuestions () {
-      return this.http.get(this.url)
+      var collectionUrl = "questions/";
+      return this.http.get(this.url + collectionUrl)
       .map(this.extractData)
       .catch(this.handleError);
     
     }
+  
+  getControlModels(modelName:string) {
+    var collectionUrl = "controlModels/";
+    return this.http.get(this.url + collectionUrl + (modelName && modelName != '' ? "?name=" + modelName : ""))
+    .map(this.extractData)
+    .catch(this.handleError);
+    
+
+  }
 
   private extractData(res:Response) {
         let body = res.json();

@@ -4,7 +4,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormComponentService } from '../../../services/form-component.service';
-import { ControlModel } from '../../../model/control-model';
+import { ControlModel, ControlModelResponse } from '../../../model/control-model';
 import { FormControlValidatorService } from '../../../services/form-control-validator.service';
 
 @Component({
@@ -26,13 +26,18 @@ export class DomesticAddressComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.controls = this.componentService.getComponentModel(this.componentService.DOMESTIC_ADDRESS);
-    if (this.controls && this.controls.length > 0) {
-      this.setupFormGroupControls();
-      //this.onChanges();
-    } else {
-      console.log('Control model was not found. There is a problem with componentService');
-    }
+    this.componentService.getComponentModel(this.componentService.DOMESTIC_ADDRESS)
+    .subscribe((resp : ControlModelResponse) => {
+        this.controls = resp.controls;
+        if (this.controls && this.controls.length > 0) {
+          this.setupFormGroupControls();
+          //this.onChanges();
+        } else {
+          console.log('Control model was not found. There is a problem with componentService');
+        }
+        
+    });
+    
   }
 
   setupFormGroupControls() {

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ControlModel } from '../model/control-model';
+import { ControlModel, ControlModelResponse } from '../model/control-model';
+import { QuestionsService } from './questions.service';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class FormComponentService {
@@ -38,7 +40,6 @@ export class FormComponentService {
       "placeHolder":"Last Name",
       "classStyles":""
     }
-    
   ];
 
   private domesticAddress: ControlModel[] = [
@@ -103,21 +104,46 @@ export class FormComponentService {
   private componentModels: Map<string, ControlModel> = new Map<string,ControlModel>();
   public APPLICANT_NAME: string = "applicantName";
   public DOMESTIC_ADDRESS: string = "domesticAddress";
+  private errorMessage : any;
   
-  constructor() { 
+  constructor(private questionsService: QuestionsService ) { 
       this.componentModels[this.APPLICANT_NAME] = this.applicantNameModel;
       this.componentModels[this.DOMESTIC_ADDRESS] = this.domesticAddress;
       //... more models
 
   }
 
-  getComponentModel(component:string): ControlModel[] {
-    var model = this.componentModels[component];
+  getComponentModel(component:string): Observable<ControlModel> { 
+    return this.questionsService.getControlModels(component)
+    .map(
+      (resp: ControlModelResponse) => { 
+        if (resp) {
+          /*this.questionsResults.forEach(element => {
+            console.log("Question number:" + element.number +  " name:" + element.name);
+          });*/
+          return resp;
+
+        } else {
+          console.log("No Control Models found. ");
+          return null;
+        }
+
+      },
+      error => {
+        this.errorMessage = <any>error
+        console.log (this.errorMessage);
+        return null;
+      }
+    );
+
+    /* var model = this.componentModels[component];
     if (model) {
       return model;
     } else {
       return null;
     }
+    */
+
   }
 
 }

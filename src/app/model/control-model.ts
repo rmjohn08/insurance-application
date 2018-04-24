@@ -11,3 +11,8 @@ export interface ControlModel
     classStyles?: string
     
 }
+
+export interface ControlModelResponse {
+    name: string,
+    controls?: ControlModel[]
+}

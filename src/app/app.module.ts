@@ -28,6 +28,7 @@ import { ReviewComponent } from './components/lib/review/review.component';
 import { BenefitiariesComponent } from './components/lib/benefitiaries/benefitiaries.component';
 import { FormComponentService } from './services/form-component.service';
 import { FormControlValidatorService } from './services/form-control-validator.service';
+import { StepsBuilderComponent } from './components/steps-builder/steps-builder.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FormControlValidatorService } from './services/form-control-validator.s
     ReplacementComponent,
     MethodPaymentComponent,
     ReviewComponent,
-    BenefitiariesComponent
+    BenefitiariesComponent,
+    StepsBuilderComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,

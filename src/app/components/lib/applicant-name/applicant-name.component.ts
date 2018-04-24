@@ -5,7 +5,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { INVALID } from '@angular/forms/src/model';
 import { FormComponentService } from '../../../services/form-component.service';
-import { ControlModel } from '../../../model/control-model';
+import { ControlModel, ControlModelResponse } from '../../../model/control-model';
 import { FormControlValidatorService } from '../../../services/form-control-validator.service';
 
 @Component({
@@ -26,13 +26,17 @@ export class ApplicantNameComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.controls = this.componentService.getComponentModel(this.componentService.APPLICANT_NAME);
-    if (this.controls && this.controls.length > 0) {
-      this.setupFormGroupControls();
-      this.onChanges();
-    } else {
-      console.log('Control model was not found. There is a problem with componentService');
-    }
+    this.componentService.getComponentModel(this.componentService.APPLICANT_NAME)
+    .subscribe( (result: ControlModelResponse) => {
+        this.controls  = result.controls;
+        if (this.controls) {
+          this.setupFormGroupControls();
+        } else {
+          console.log("Control Model " + this.componentService.APPLICANT_NAME + " not found.");
+        }
+
+    });
+    
   }
 
   setupFormGroupControls() {
