@@ -27,8 +27,12 @@ export class DomesticAddressComponent implements OnInit {
 
   ngOnInit() {
     this.componentService.getComponentModel(this.componentService.DOMESTIC_ADDRESS)
-    .subscribe((resp : ControlModelResponse) => {
-        this.controls = resp.controls;
+    .subscribe( (result:ControlModelResponse) => {
+        var id = 0;
+        while(result[id]) {
+          this.controls = result[id].controls;
+          id++;
+        }
         if (this.controls && this.controls.length > 0) {
           this.setupFormGroupControls();
           //this.onChanges();

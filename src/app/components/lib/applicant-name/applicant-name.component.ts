@@ -27,8 +27,13 @@ export class ApplicantNameComponent implements OnInit {
 
   ngOnInit() {
     this.componentService.getComponentModel(this.componentService.APPLICANT_NAME)
-    .subscribe( (result: ControlModelResponse) => {
-        this.controls  = result.controls;
+    .subscribe( (result:ControlModelResponse) => {
+       var id = 0;
+       while(result[id]) {
+          this.controls = result[id].controls;
+          id++;
+       }
+       
         if (this.controls) {
           this.setupFormGroupControls();
         } else {
