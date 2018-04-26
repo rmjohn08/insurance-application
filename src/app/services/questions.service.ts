@@ -21,8 +21,9 @@ export class QuestionsService {
     }
   
   getControlModels(modelName:string) {
-    var collectionUrl = "controlModels/";
-    return this.http.get(this.url + collectionUrl + (modelName && modelName != '' ? "?name=" + modelName : ""))
+    var collection = "controlModels/";
+    //+ (modelName && modelName != '' ? "?name=" + modelName : "")
+    return this.http.get(this.url + collection)
     .map(this.extractData)
     .catch(this.handleError);
     

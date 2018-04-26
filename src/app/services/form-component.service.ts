@@ -106,11 +106,65 @@ export class FormComponentService {
   public DOMESTIC_ADDRESS: string = "domesticAddress";
   private errorMessage : any;
   
-  constructor(private questionsService: QuestionsService ) { 
-      this.componentModels[this.APPLICANT_NAME] = this.applicantNameModel;
-      this.componentModels[this.DOMESTIC_ADDRESS] = this.domesticAddress;
+  constructor(private questionsService: QuestionsService ) {
+      //this.loadComponentModels(); 
+      //this.componentModels[this.APPLICANT_NAME] = this.applicantNameModel;
+      //this.componentModels[this.DOMESTIC_ADDRESS] = this.domesticAddress;
       //... more models
+  }
 
+    /*
+    .map(
+      (resp: ControlModelResponse) => { 
+        if (resp) {
+          console.log("Question number:" + resp.controls);
+          this.componentModels[resp.name] = resp.controls;
+          return resp;
+
+        } else {
+          console.log("No Control Models found. ");
+          return null;
+        }
+
+      },
+      error => {
+        this.errorMessage = <any>error
+        console.log (this.errorMessage);
+        return null;
+      }
+    );  
+    */
+  
+  getControlsByComponentName(name:string): ControlModel[] {
+    return this.componentModels[name];
+  }
+
+  addComponentModel(name:string, con:ControlModel) {
+    console.log("Adding " + name + " : "+ con );
+    this.componentModels[name] = con;
+  }
+
+  loadComponentModels(): Promise<any> {
+    return new Promise((resolve,reject) => {
+      this.questionsService.getControlModels("")
+      .toPromise()
+      .then(
+        (result:ControlModelResponse) => {
+        var id = 0;
+        while(result[id]) {
+            this.addComponentModel(result[id].name,result[id].controls)
+            id++;
+        }
+        resolve(true);
+      }).catch(this.handleError());
+
+    });
+  }
+
+  private handleError(data?:any) {
+    return (error: any) => {
+      console.log(error);
+    }
   }
 
   getComponentModel(component:string): Observable<ControlModel> { 
@@ -135,15 +189,7 @@ export class FormComponentService {
         return null;
       }
     );
-
-    /* var model = this.componentModels[component];
-    if (model) {
-      return model;
-    } else {
-      return null;
-    }
-    */
-
+    
   }
 
 }

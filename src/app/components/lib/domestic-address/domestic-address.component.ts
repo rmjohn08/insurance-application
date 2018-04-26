@@ -26,22 +26,8 @@ export class DomesticAddressComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.componentService.getComponentModel(this.componentService.DOMESTIC_ADDRESS)
-    .subscribe( (result:ControlModelResponse) => {
-        var id = 0;
-        while(result[id]) {
-          this.controls = result[id].controls;
-          id++;
-        }
-        if (this.controls && this.controls.length > 0) {
-          this.setupFormGroupControls();
-          //this.onChanges();
-        } else {
-          console.log('Control model was not found. There is a problem with componentService');
-        }
-        
-    });
-    
+    this.controls = this.componentService.getControlsByComponentName(this.componentService.DOMESTIC_ADDRESS);
+    this.setupFormGroupControls();    
   }
 
   setupFormGroupControls() {

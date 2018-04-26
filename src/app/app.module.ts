@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpModule } from '@angular/http';
 // these imports are needed for Reactive forms (formControls, formBuilder etc...)
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -30,6 +30,9 @@ import { FormComponentService } from './services/form-component.service';
 import { FormControlValidatorService } from './services/form-control-validator.service';
 import { StepsBuilderComponent } from './components/steps-builder/steps-builder.component';
 
+export function init_components(componentService: FormComponentService) {
+  return() => componentService.loadComponentModels();
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +64,14 @@ import { StepsBuilderComponent } from './components/steps-builder/steps-builder.
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [QuoteService, QuestionsService, FormComponentService, FormControlValidatorService],
+  providers: [QuoteService, 
+    QuestionsService, 
+    FormComponentService, 
+    FormControlValidatorService,
+    {provide: APP_INITIALIZER, useFactory: init_components, deps: [FormComponentService],multi:true}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

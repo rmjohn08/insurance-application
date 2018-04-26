@@ -26,7 +26,7 @@ export class ApplicantNameComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.componentService.getComponentModel(this.componentService.APPLICANT_NAME)
+    /*this.componentService.getComponentModel(this.componentService.APPLICANT_NAME)
     .subscribe( (result:ControlModelResponse) => {
        var id = 0;
        while(result[id]) {
@@ -41,7 +41,9 @@ export class ApplicantNameComponent implements OnInit {
         }
 
     });
-    
+    */
+    this.controls = this.componentService.getControlsByComponentName(this.componentService.APPLICANT_NAME);
+    this.setupFormGroupControls();
   }
 
   setupFormGroupControls() {
