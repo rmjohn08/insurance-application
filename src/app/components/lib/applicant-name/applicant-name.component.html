@@ -1,14 +1,27 @@
 
+<mat-card>
+  <mat-card-content>
 <form [formGroup]="stepControl">
- <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width">
+<table class="table-form-full-width table-form-main">
+   <tr>
+    <td colspan="2">
+      <mat-form-field class="control-full-width">
       <input matInput placeholder="First name" formControlName="firstName">
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width">
+    </mat-form-field>
+  </td>
+  </tr>
+  <tr>
+   <td>
+     <mat-form-field class="control-full-width">
       <input matInput placeholder="Middle name" formControlName="middleName">
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width">
+    </mat-form-field>
+  </td>
+  <td><mat-form-field class="control-full-width">
       <input matInput placeholder="Last Name" formControlName="lastName">
-    </mat-form-field></td>
-  </tr></table>
+    </mat-form-field>
+  </td>
+</tr>
+</table>
 </form>
+</mat-card-content>
+</mat-card>

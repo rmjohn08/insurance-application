@@ -144,6 +144,7 @@ export class FormComponentService {
     this.componentModels[name] = con;
   }
 
+  // done at application start
   loadComponentModels(): Promise<any> {
     return new Promise((resolve,reject) => {
       this.questionsService.getControlModels("")

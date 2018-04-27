@@ -9,3 +9,21 @@ body {
 .example-spacer {
     width: 100%;
     }
+
+.table-form-full-width {
+    max-width: 80em;
+    min-width: 45em;
+    width: 100%
+}
+
+table.table-form-main { 
+    border-spacing: 5px;  /* cellspacing */
+}
+
+table.table-form-main th, td { 
+    padding: 15px; /* cellpadding */
+}
+
+.control-full-width {
+    width: 100%;
+}
