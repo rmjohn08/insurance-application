@@ -122,6 +122,7 @@
         "name":"state",
         "Key":"UWQ_Applicant_Residence_State",
         "text":"",
+        "validator":"canQuoteState",
         "placeHolder":"State",
         "classStyles":""
       },
