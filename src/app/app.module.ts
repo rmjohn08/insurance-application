@@ -29,6 +29,7 @@ import { BenefitiariesComponent } from './components/lib/benefitiaries/benefitia
 import { FormComponentService } from './services/form-component.service';
 import { FormControlValidatorService } from './services/form-control-validator.service';
 import { StepsBuilderComponent } from './components/steps-builder/steps-builder.component';
+import { CanQuoteStateValidator } from './components/directives/quotable-state-directive';
 
 export function init_components(componentService: FormComponentService) {
   return() => componentService.loadComponentModels();
@@ -49,7 +50,8 @@ export function init_components(componentService: FormComponentService) {
     MethodPaymentComponent,
     ReviewComponent,
     BenefitiariesComponent,
-    StepsBuilderComponent
+    StepsBuilderComponent,
+    CanQuoteStateValidator
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
