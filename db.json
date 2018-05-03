@@ -42,7 +42,7 @@
   ],
   "controlModels": [
     { 
-    "name":"applicantName", 
+    "name":"applicant-name", 
     "controls":[
         {   
         "inputType":"text",
@@ -80,7 +80,7 @@
         ],
       "layout" : "<input type=\"firstName\"> <input type=\"lastName\">"
     },
-    { "name": "domesticAddress",
+    { "name": "domestic-address",
      "controls":[ 
       {   
         "inputType":"text",
@@ -140,6 +140,22 @@
       }
     ],
      "layout" : "<input type=\"address\"> <input type=\"address2\">"
+   },
+    { "name": "replacement",
+     "controls":[ 
+      {   
+        "inputType":"text",
+        "label":"Replacement Name",
+        "regex":"",
+        "required":true,
+        "name":"replacementName",
+        "Key":"UWQ_Applicant_Replacement",
+        "text":"",
+        "placeHolder":"Replacement Name",
+        "classStyles":""
+      }
+    ],
+     "layout" : "<input type=\"text\"> <input type=\"replacementName\">"
    }
   ],
   "profile": {
