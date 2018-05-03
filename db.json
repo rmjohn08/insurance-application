@@ -78,7 +78,7 @@
         "classStyles":""
         }
         ],
-      "layout" : "<input type=\"firstName\"> <input type=\"lastName\">"
+      "layout" : "<input type=\"text\" name=\"firstName\"> <input type=\"text\" name=\"lastName\">"
     },
     { "name": "domestic-address",
      "controls":[ 
@@ -139,7 +139,7 @@
         "classStyles":""
       }
     ],
-     "layout" : "<input type=\"address\"> <input type=\"address2\">"
+     "layout" : "<input type=\"text\" name=\"address\"> <input type=\"text\" name=\"address2\">"
    },
     { "name": "replacement",
      "controls":[ 
