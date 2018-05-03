@@ -77,7 +77,8 @@
         "placeHolder":"Last Name",
         "classStyles":""
         }
-        ]
+        ],
+      "layout" : "<input type=\"firstName\"> <input type=\"lastName\">"
     },
     { "name": "domesticAddress",
      "controls":[ 
@@ -137,7 +138,8 @@
         "placeHolder":"Zipcode",
         "classStyles":""
       }
-    ]
+    ],
+     "layout" : "<input type=\"address\"> <input type=\"address2\">"
    }
   ],
   "profile": {
