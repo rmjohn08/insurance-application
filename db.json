@@ -155,7 +155,7 @@
         "classStyles":""
       }
     ],
-     "layout" : "<input type=\"text\"> <input type=\"replacementName\">"
+     "layout" : "<input type=\"text\" name=\"replacementName\">"
    }
   ],
   "profile": {
