@@ -14,5 +14,6 @@ export interface ControlModel
 
 export interface ControlModelResponse {
     name: string,
-    controls?: ControlModel[]
+    controls?: ControlModel[],
+    layout?: string
 }

@@ -26,24 +26,9 @@ export class ApplicantNameComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this.componentService.getComponentModel(this.componentService.APPLICANT_NAME)
-    .subscribe( (result:ControlModelResponse) => {
-       var id = 0;
-       while(result[id]) {
-          this.controls = result[id].controls;
-          id++;
-       }
-       
-        if (this.controls) {
-          this.setupFormGroupControls();
-        } else {
-          console.log("Control Model " + this.componentService.APPLICANT_NAME + " not found.");
-        }
-
-    });
-    */
-    this.controls = this.componentService.getControlsByComponentName(this.componentService.APPLICANT_NAME);
-    this.setupFormGroupControls();
+    // old method
+    //this.controls = this.componentService.getControlsByComponentName(this.componentService.APPLICANT_NAME);
+    //this.setupFormGroupControls();
   }
 
   setupFormGroupControls() {

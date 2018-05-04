@@ -101,7 +101,7 @@ export class FormComponentService {
     
   ];
 
-  private componentModels: Map<string, ControlModel> = new Map<string,ControlModel>();
+  private componentModels: Map<string, [ControlModel, string]> = new Map<string,[ControlModel, string]>();
   public APPLICANT_NAME: string = "applicantName";
   public DOMESTIC_ADDRESS: string = "domesticAddress";
   private errorMessage : any;
@@ -135,13 +135,13 @@ export class FormComponentService {
     );  
     */
   
-  getControlsByComponentName(name:string): ControlModel[] {
+  getControlsByComponentName(name:string): [ControlModel[], string] {
     return this.componentModels[name];
   }
 
-  addComponentModel(name:string, con:ControlModel) {
+  addComponentModel(name:string, con:ControlModel, layout:string) {
     console.log("Adding " + name + " : "+ con );
-    this.componentModels[name] = con;
+    this.componentModels[name] = [con,layout];
   }
 
   // done at application start
@@ -153,7 +153,7 @@ export class FormComponentService {
         (result:ControlModelResponse) => {
         var id = 0;
         while(result[id]) {
-            this.addComponentModel(result[id].name,result[id].controls)
+            this.addComponentModel(result[id].name,result[id].controls, result[id].layout)
             id++;
         }
         resolve(true);

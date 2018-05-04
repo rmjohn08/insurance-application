@@ -26,8 +26,9 @@ export class DomesticAddressComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.controls = this.componentService.getControlsByComponentName(this.componentService.DOMESTIC_ADDRESS);
-    this.setupFormGroupControls();    
+    // old method
+    //this.controls = this.componentService.getControlsByComponentName(this.componentService.DOMESTIC_ADDRESS);
+    //this.setupFormGroupControls();    
   }
 
   setupFormGroupControls() {
