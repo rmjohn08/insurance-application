@@ -13,6 +13,7 @@ export class StepComponentComponent implements OnInit {
   @Input("stepControl") stepControl: FormGroup;
   @Input("stepper") matStepper: MatStepper;
   controlQuestion;
+
   constructor() { 
 
   }
@@ -33,8 +34,6 @@ export class StepComponentComponent implements OnInit {
       console.log("NOT completed!!!!")
       this.completed = true;
     }
-
-    
   }
 
   goNext() {

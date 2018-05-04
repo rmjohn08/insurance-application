@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule, APP_INITIALIZER, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpModule } from '@angular/http';
 // these imports are needed for Reactive forms (formControls, formBuilder etc...)
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -30,7 +29,10 @@ import { FormComponentService } from './services/form-component.service';
 import { FormControlValidatorService } from './services/form-control-validator.service';
 import { StepsBuilderComponent } from './components/steps-builder/steps-builder.component';
 import { CanQuoteStateValidator } from './components/directives/quotable-state-directive';
-import { FormStepComponent } from './components/form-step/form-step.component';
+
+import { DynamicFormModule } from './components/dynamic-form/dynamic-form.module';
+import { FormButtonComponent } from './components/dynamic-form/controls/form-button/form-button.component';
+import { FormInputComponent } from './components/dynamic-form/controls/form-input/form-input.component';
 
 export function init_components(componentService: FormComponentService) {
   return() => componentService.loadComponentModels();
@@ -53,7 +55,8 @@ export function init_components(componentService: FormComponentService) {
     BenefitiariesComponent,
     StepsBuilderComponent,
     CanQuoteStateValidator,
-    FormStepComponent
+    
+    
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
@@ -66,13 +69,19 @@ export function init_components(componentService: FormComponentService) {
     MatIconModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    DynamicFormModule,
+    
   ],
   providers: [QuoteService, 
     QuestionsService, 
     FormComponentService, 
     FormControlValidatorService,
     {provide: APP_INITIALIZER, useFactory: init_components, deps: [FormComponentService],multi:true}
+  ],
+  entryComponents: [
+    FormButtonComponent,
+    FormInputComponent
   ],
   bootstrap: [AppComponent]
 })

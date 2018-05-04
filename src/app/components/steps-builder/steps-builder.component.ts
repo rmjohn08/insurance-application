@@ -62,6 +62,7 @@ export class StepsBuilderComponent implements OnInit {
 
   }
 
+  // @TODO this needs to be moved out or removed 
   setValidators(it) {
     let validators = [];
 
