@@ -3,10 +3,11 @@ import { FormButtonComponent } from "../dynamic-form/controls/form-button/form-b
 import { FormInputComponent } from "../dynamic-form/controls/form-input/form-input.component";
 import { FormSelectComponent } from "../dynamic-form/controls/form-select/form-select.component";
 import { FormGroup } from "@angular/forms";
+import { ControlModel } from "../../model/control-model";
 
 const components = {
     button : FormButtonComponent,
-    inputType : FormInputComponent,
+    text : FormInputComponent,
     select : FormSelectComponent
 }
 
@@ -14,7 +15,7 @@ const components = {
     selector: '[dynamicField]',
 })
 export class DynamicFieldDirective implements OnInit {
-    @Input("controlConfig") controlConfig;
+    @Input("controlConfig") controlConfig: ControlModel;
     @Input("formGroup") formGroup: FormGroup;
 
     component;
@@ -25,7 +26,7 @@ export class DynamicFieldDirective implements OnInit {
     }
 
     ngOnInit(): void {
-        const component = components[this.controlConfig.type];
+        const component = components[this.controlConfig.inputType];
         const factory = this.resolver.resolveComponentFactory<any>(component);
         this.component = this.container.createComponent(factory);
         this.component.instance.controlConfig = this.controlConfig;
