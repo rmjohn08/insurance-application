@@ -9,7 +9,8 @@ import { Component } from "@angular/core";
         <mat-form-field class="control-full-width">
             <input matInput placeholder = "{{controlConfig.placeHolder}}" 
                 [formControlName] = "controlConfig.name"
-                title = "{{controlConfig.label}}">
+                title = "{{controlConfig.label}}"
+                >
         </mat-form-field>
         </div>
     `

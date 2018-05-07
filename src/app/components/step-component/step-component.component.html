@@ -2,7 +2,10 @@
 <form >
     <div class="col-lg-12" *ngFor="let q of controlQuestion.value.controls">
         <div class="form-group form-inline">
-            <app-form-step class="col-lg-12" [(stepControl)]="stepControl" [componentName]="q.component"></app-form-step>
+            <app-form-step class="col-lg-12" [(stepControl)]="stepControl" 
+                [componentName]="q.component" 
+                [componentColumns]="q.columns">
+            </app-form-step>
         </div>
     </div>
     <!--

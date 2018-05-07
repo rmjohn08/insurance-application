@@ -21,6 +21,7 @@ export class FormStepComponent implements OnInit {
     private controls: ControlModel[]
   
     @Input("componentName") componentName: string;
+    @Input("componentColumns") componentColumns: number;
     @Input("stepControl") stepControl: FormGroup;
     // this can be used to emit changes and communicate up the component chain (a parent component)
     @Output("formChanges") formChanges = new EventEmitter<String>();
