@@ -9,7 +9,9 @@
 	"controls": [
             {
                 "component":"applicant-name",
-                "version":"1.0"
+                "version":"1.0",
+                "columns":"2"
+
             }
 	    ]
     },
@@ -22,7 +24,8 @@
 	"controls": [
             {
                 "component":"domestic-address",
-                "version":"1.0"
+                "version":"1.0",
+                "columns":"3"
             }
 	    ]
     },
@@ -35,7 +38,8 @@
 	"controls": [
             {
                 "component":"replacement",
-                "version":"1.0"
+                "version":"1.0",
+                "columns":"1"
             }
 	    ]
     }
