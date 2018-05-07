@@ -53,7 +53,8 @@
         "Key":"UWQ_Applicant_First_Name",
         "text":"",
         "placeHolder":"First Name",
-        "classStyles":""
+        "classStyles":"",
+        "options" : ""
         },
         {   
         "inputType":"text",
@@ -64,7 +65,8 @@
         "Key":"UWQ_Applicant_Middle_Name",
         "text":"",
         "placeHolder":"Middle Name",
-        "classStyles":""
+        "classStyles":"",
+        "options" : ""
         },
         {   
         "inputType":"text",
@@ -75,7 +77,8 @@
         "Key":"UWQ_Applicant_Last_Name",
         "text":"",
         "placeHolder":"Last Name",
-        "classStyles":""
+        "classStyles":"",
+        "options" : ""
         }
         ],
       "layout" : "<input type=\"text\" name=\"firstName\"> <input type=\"text\" name=\"lastName\">"
