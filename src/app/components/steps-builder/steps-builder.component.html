@@ -1,7 +1,7 @@
 <mat-horizontal-stepper linear #stepper>
     <div  class="col-lg-4" *ngFor="let number of numbers">
         <mat-step [stepControl]="formGroupControl(number-1)" [completed]="false">
-            <ng-template matStepLabel>Step {{number}}</ng-template>
+            <ng-template matStepLabel>{{questionsResults[number - 1].name}}</ng-template>
             <app-step-component [stepControl]="formGroupControl(number-1)" 
             [completed]="formGroupCompleted(number-1)"
             [stepper]="stepper"></app-step-component>

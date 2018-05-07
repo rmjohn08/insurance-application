@@ -5,7 +5,7 @@ import { FormInputComponent } from './controls/form-input/form-input.component';
 import { FormButtonComponent } from './controls/form-button/form-button.component';
 import { FormSelectComponent } from './controls/form-select/form-select.component';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule,
-    MatIconModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+    MatIconModule, MatFormFieldModule, MatInputModule, MatGridListModule } from '@angular/material';
 import { DynamicFieldDirective } from './dynamic-field.directive';
 import { FormStepComponent } from './form-step.component';
 
@@ -19,6 +19,7 @@ import { FormStepComponent } from './form-step.component';
         MatIconModule,
         MatFormFieldModule,
         MatInputModule,
+        MatGridListModule
     ],
     declarations : [
         DynamicFieldDirective,

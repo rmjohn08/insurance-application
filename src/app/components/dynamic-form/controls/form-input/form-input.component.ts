@@ -7,7 +7,9 @@ import { Component } from "@angular/core";
     template: `
         <div class="dynamic-field form-input" [formGroup] = "formGroup">
         <mat-form-field class="control-full-width">
-            <input matInput placeholder = "{{controlConfig.placeHolder}}" [formControlName] = "controlConfig.name">
+            <input matInput placeholder = "{{controlConfig.placeHolder}}" 
+                [formControlName] = "controlConfig.name"
+                title = "{{controlConfig.label}}">
         </mat-form-field>
         </div>
     `

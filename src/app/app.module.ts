@@ -14,7 +14,7 @@ import { QuoteService } from './services/quote.service';
 // Material Desing imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule,
-   MatIconModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+   MatIconModule, MatFormFieldModule, MatInputModule, MatGridListModule } from '@angular/material';
 import { MatStepperModule } from  '@angular/material/stepper';
 import { StepComponentComponent } from './components/step-component/step-component.component';
 import { QuestionsService } from './services/questions.service';
@@ -70,6 +70,7 @@ export function init_components(componentService: FormComponentService) {
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
+    MatGridListModule,
     DynamicFormModule,
     
   ],
