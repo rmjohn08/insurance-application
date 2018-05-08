@@ -85,7 +85,7 @@
         "options" : ""
         },
       {   
-        "inputType":"text",
+        "inputType":"number",
         "label":"Age",
         "regex":"",
         "required": true,
