@@ -83,6 +83,31 @@
         "placeHolder":"Last Name",
         "classStyles":"",
         "options" : ""
+        },
+      {   
+        "inputType":"text",
+        "label":"Age",
+        "regex":"",
+        "required": true,
+        "name":"age",
+        "Key":"UWQ_Applicant_Age",
+        "text":"",
+        "placeHolder":"Age",
+        "classStyles":"",
+        "max":"100",
+        "options" : ""
+        },
+      {   
+        "inputType":"alertbox",
+        "label":"",
+        "regex":"",
+        "required": true,
+        "name":"alertBoxAge",
+        "Key":"",
+        "text":"An additional 10% for 65 and older, if submitted in Nebraska",
+        "placeHolder":"Age",
+        "classStyles":"",
+        "options" : ""
         }
         ],
       "layout" : "<input type=\"text\" name=\"firstName\"> <input type=\"text\" name=\"lastName\">"
