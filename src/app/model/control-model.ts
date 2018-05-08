@@ -8,7 +8,10 @@ export interface ControlModel
     Key?: string,
     text?: string,
     placeHolder?: string,
-    classStyles?: string
+    classStyles?: string,
+    showCondition?: string,
+    max? : number,
+    isEmail? : true,
     
 }
 

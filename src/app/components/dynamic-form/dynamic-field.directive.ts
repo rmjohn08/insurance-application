@@ -9,12 +9,14 @@ import { FormInputComponent } from "../dynamic-form/controls/form-input/form-inp
 import { FormSelectComponent } from "../dynamic-form/controls/form-select/form-select.component";
 import { FormGroup } from "@angular/forms";
 import { ControlModel } from "../../model/control-model";
+import { FormAlertComponent } from "./controls/form-alert/form-alert.component";
 
 // map representing different form elements, more to come.....
 const components = {
     button : FormButtonComponent,
     text : FormInputComponent,
-    select : FormSelectComponent
+    select : FormSelectComponent,
+    alertbox : FormAlertComponent
 }
 
 @Directive({

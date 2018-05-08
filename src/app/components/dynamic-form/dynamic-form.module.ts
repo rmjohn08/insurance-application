@@ -8,9 +8,11 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule,
     MatIconModule, MatFormFieldModule, MatInputModule, MatGridListModule } from '@angular/material';
 import { DynamicFieldDirective } from './dynamic-field.directive';
 import { FormStepComponent } from './form-step.component';
+import { FormAlertComponent } from './controls/form-alert/form-alert.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule ({
-    imports: [CommonModule, 
+    imports: [CommonModule, BrowserModule,
         ReactiveFormsModule,
         MatButtonModule,
         MatMenuModule,
@@ -26,13 +28,15 @@ import { FormStepComponent } from './form-step.component';
         FormInputComponent,
         FormButtonComponent,
         FormSelectComponent,
-        FormStepComponent
+        FormStepComponent,
+        FormAlertComponent
     ],
     entryComponents : [
         FormButtonComponent,
         FormInputComponent,
         FormSelectComponent,
-        FormStepComponent
+        FormStepComponent,
+        FormAlertComponent
     ],
     exports: [
         FormStepComponent,

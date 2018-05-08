@@ -19,11 +19,17 @@ export class FormControlValidatorService {
   setValidators(it):any {
     let validators = [];
 
-    if (it.required || it.required=='true') {
+    if (it.required || it.required == 'true') {
       validators.push(Validators.required);
     }
     if (it.regex && it.regex != '') {
       validators.push(Validators.pattern(it.regex))
+    }
+    if (it.max && it.max != '') {
+      validators.push(Validators.max(it.max))
+    }
+    if (it.isEmail && it.isEmail == 'true') {
+      validators.push(Validators.email)
     }
     if (it.validator) { //<= add as many as needed
       validators.push(this.customValidators[it.validator]);
