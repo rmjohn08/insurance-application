@@ -95,7 +95,8 @@
         "placeHolder":"Age",
         "classStyles":"control-med-width",
         "max":"100",
-        "options" : ""
+        "options" : "",
+        "maxlength" : "3"
         },
       {   
         "inputType":"alertbox",
@@ -158,7 +159,8 @@
         "text":"",
         "validator":"canQuoteState",
         "placeHolder":"State",
-        "classStyles":""
+        "classStyles":"",
+        "maxlength" : "2"
       },
       {   
         "inputType":"text",
