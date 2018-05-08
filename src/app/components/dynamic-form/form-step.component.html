@@ -1,12 +1,13 @@
 <mat-card>
     <mat-card-content>
-      <form [formGroup]="stepControl">
+      <form [formGroup]="stepControl" #formPage >
           <mat-grid-list cols="{{componentColumns}}" rowHeight="100px">
         <mat-grid-tile *ngFor="let control of controls" >
           <ng-container 
           dynamicField 
           [controlConfig] = "control"
-          [formGroup] = "stepControl">
+          [formGroup] = "stepControl"
+          [formPage] = "formPage">
           </ng-container>
         </mat-grid-tile>
         </mat-grid-list>  

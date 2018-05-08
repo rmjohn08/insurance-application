@@ -27,3 +27,10 @@ table.table-form-main th, td {
 .control-full-width {
     width: 100%;
 }
+
+.control-med-width {
+    width: 50%;
+}
+.mat-grid-tile {
+    padding: 50px
+}

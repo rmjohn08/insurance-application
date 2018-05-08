@@ -25,6 +25,7 @@ const components = {
 export class DynamicFieldDirective implements OnInit {
     @Input("controlConfig") controlConfig: ControlModel;
     @Input("formGroup") formGroup: FormGroup;
+    @Input("formPage") formPage;
 
     component;
 
@@ -36,10 +37,16 @@ export class DynamicFieldDirective implements OnInit {
     // builds the component dynamically. 
     ngOnInit(): void {
         const component = components[this.controlConfig.inputType];
+        if (!component) {
+            console.log('Undefined component ' + this.controlConfig.inputType);
+            return;
+        }
+        console.log('control config:'+JSON.stringify(this.controlConfig))
         const factory = this.resolver.resolveComponentFactory<any>(component);
         this.component = this.container.createComponent(factory);
         this.component.instance.controlConfig = this.controlConfig;
         this.component.instance.formGroup = this.formGroup; 
+        this.component.instance.formPage = this.formPage;        
     }
 
 }

@@ -6,10 +6,12 @@ import { Component } from "@angular/core";
     styleUrls: [],
     template: `
         <div class="dynamic-field form-input" [formGroup] = "formGroup">
-        <mat-form-field class="control-full-width">
+        <mat-form-field class = "{{ controlConfig.classStyles }}">
             <input matInput placeholder = "{{controlConfig.placeHolder}}" 
+                #{{controlConfig.name}}
                 [formControlName] = "controlConfig.name"
                 title = "{{controlConfig.label}}"
+                maxlength = "{{controlConfig.maxlength}}"
                 >
         </mat-form-field>
         </div>

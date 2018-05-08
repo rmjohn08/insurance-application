@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
     selector: 'form-input',
     styleUrls: [],
     template: `  
-    <div [hidden] = "true" class="alert alert-primary" role="alert">
+    <div [hidden] = "formPage.age && formPage.age > 65 ?'none' : 'inherit'" class="alert alert-primary" role="alert">
         {{controlConfig.text}}
     </div>
     `
@@ -13,8 +13,9 @@ import { Component } from "@angular/core";
     controlConfig;
     formGroup: FormGroup;
     age: number;
+    formPage;
 
-    showCondtion () {
-        return this.controlConfig.showCondition != '' && eval(this.controlConfig.showCondition);
+    showCondition () {
+        return true; //this.controlConfig.showCondition != '' && eval(this.controlConfig.showCondition);
     }
 }
