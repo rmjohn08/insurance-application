@@ -57,7 +57,7 @@
         "Key":"UWQ_Applicant_First_Name",
         "text":"",
         "placeHolder":"First Name",
-        "classStyles":"",
+        "classStyles":"control-full-width",
         "options" : ""
         },
         {   
@@ -69,7 +69,7 @@
         "Key":"UWQ_Applicant_Middle_Name",
         "text":"",
         "placeHolder":"Middle Name",
-        "classStyles":"",
+        "classStyles":"control-full-width",
         "options" : ""
         },
         {   
@@ -81,7 +81,7 @@
         "Key":"UWQ_Applicant_Last_Name",
         "text":"",
         "placeHolder":"Last Name",
-        "classStyles":"",
+        "classStyles":"control-full-width",
         "options" : ""
         },
       {   
@@ -93,7 +93,7 @@
         "Key":"UWQ_Applicant_Age",
         "text":"",
         "placeHolder":"Age",
-        "classStyles":"",
+        "classStyles":"control-med-width",
         "max":"100",
         "options" : ""
         },
