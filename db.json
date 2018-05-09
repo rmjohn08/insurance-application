@@ -69,9 +69,9 @@
         "Key":"UWQ_Applicant_Middle_Name",
         "text":"",
         "placeHolder":"Middle Name",
-        "classStyles":"control-full-width",
+        "classStyles":"control-sm-width",
         "options" : "",
-        "maxlength" : "3"
+        "maxlength" : "1"
         },
         {   
         "inputType":"text",
