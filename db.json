@@ -70,7 +70,8 @@
         "text":"",
         "placeHolder":"Middle Name",
         "classStyles":"control-full-width",
-        "options" : ""
+        "options" : "",
+        "maxlength" : "3"
         },
         {   
         "inputType":"text",
