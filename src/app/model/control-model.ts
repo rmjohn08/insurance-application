@@ -12,6 +12,8 @@ export interface ControlModel
     showCondition?: string,
     max? : number,
     isEmail? : true,
+    maxlength? : string,
+    hint? : string,
     
 }
 

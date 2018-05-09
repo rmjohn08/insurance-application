@@ -46,7 +46,7 @@
   ],
   "controlModels": [
     { 
-    "name":"applicantName", 
+    "name":"applicant-name", 
     "controls":[
         {   
         "inputType":"text",
@@ -57,7 +57,8 @@
         "Key":"UWQ_Applicant_First_Name",
         "text":"",
         "placeHolder":"First Name",
-        "classStyles":""
+        "classStyles":"control-full-width",
+        "options" : ""
         },
         {   
         "inputType":"text",
@@ -68,7 +69,9 @@
         "Key":"UWQ_Applicant_Middle_Name",
         "text":"",
         "placeHolder":"Middle Name",
-        "classStyles":""
+        "classStyles":"control-sm-width",
+        "options" : "",
+        "maxlength" : "1"
         },
         {   
         "inputType":"text",
@@ -79,11 +82,118 @@
         "Key":"UWQ_Applicant_Last_Name",
         "text":"",
         "placeHolder":"Last Name",
-        "classStyles":""
+        "classStyles":"control-full-width",
+        "options" : ""
+        },
+      {   
+        "inputType":"number",
+        "label":"Age",
+        "regex":"",
+        "required": true,
+        "name":"age",
+        "Key":"UWQ_Applicant_Age",
+        "text":"",
+        "placeHolder":"Age",
+        "classStyles":"control-med-width",
+        "max":"100",
+        "options" : "",
+        "maxlength" : "3"
+        },
+      {   
+        "inputType":"alertbox",
+        "label":"",
+        "regex":"",
+        "required": false,
+        "name":"alertBoxAge",
+        "showCondition" : " age > 65",
+        "Key":"",
+        "text":"An additional 10% for 65 and older, if submitted in Nebraska",
+        "placeHolder":"Age",
+        "classStyles":"",
+        "options" : ""
         }
-        ]
-    }
-    
+        ],
+      "layout" : "<input type=\"text\" name=\"firstName\"> <input type=\"text\" name=\"lastName\">"
+    },
+    { "name": "domestic-address",
+     "controls":[ 
+      {   
+        "inputType":"text",
+        "label":"Address",
+        "regex":"",
+        "required":true,
+        "name":"address",
+        "Key":"UWQ_Applicant_Residence_Address",
+        "text":"",
+        "placeHolder":"Address",
+        "classStyles":""
+      },
+      {   
+        "inputType":"text",
+        "label":"Address 2",
+        "regex":"",
+        "required":false,
+        "name":"address2",
+        "Key":"UWQ_Applicant_Residence_Address2",
+        "text":"",
+        "placeHolder":"Address2",
+        "classStyles":""
+      },
+      {   
+        "inputType":"text",
+        "label":"city",
+        "regex":"",
+        "required":true,
+        "name":"city",
+        "Key":"UWQ_Applicant_Residence_City",
+        "text":"",
+        "placeHolder":"City",
+        "classStyles":""
+      },
+      {   
+        "inputType":"text",
+        "label":"state",
+        "regex":"",
+        "required":true,
+        "name":"state",
+        "Key":"UWQ_Applicant_Residence_State",
+        "text":"",
+        "validator":"canQuoteState",
+        "placeHolder":"State",
+        "classStyles":"",
+        "maxlength" : "2",
+        "hint" : "NE"
+      },
+      {   
+        "inputType":"text",
+        "label":"Zipcode",
+        "regex":"",
+        "required":true,
+        "name":"zipcode",
+        "Key":"UWQ_Applicant_Residence_Zipcode",
+        "text":"",
+        "placeHolder":"Zipcode",
+        "classStyles":""
+      }
+    ],
+     "layout" : "<input type=\"text\" name=\"address\"> <input type=\"text\" name=\"address2\">"
+   },
+    { "name": "replacement",
+     "controls":[ 
+      {   
+        "inputType":"text",
+        "label":"Replacement Name",
+        "regex":"",
+        "required":true,
+        "name":"replacementName",
+        "Key":"UWQ_Applicant_Replacement",
+        "text":"",
+        "placeHolder":"Replacement Name",
+        "classStyles":""
+      }
+    ],
+     "layout" : "<input type=\"text\" name=\"replacementName\">"
+   }
   ],
   "profile": {
     "name": "typicode"

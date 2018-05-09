@@ -24,13 +24,24 @@ table.table-form-main th, td {
     padding: 15px; /* cellpadding */
 }
 
-.control-full-width {
-    width: 100%;
+.mat-form-field-flex .control-full-width {
+    width:100%
 }
 
-.control-med-width {
+div.control-med-width {
     width: 50%;
 }
+
+.mat-form-field-flex .control-sm-width {
+    width: 25%
+}
+
+.mat-form-field-flex .control-xsm-width {
+    width: 10%
+}
+
 .mat-grid-tile {
     padding: 50px
 }
+
+/* mat-form-field */

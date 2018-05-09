@@ -15,6 +15,7 @@ import { FormAlertComponent } from "./controls/form-alert/form-alert.component";
 const components = {
     button : FormButtonComponent,
     text : FormInputComponent,
+    number : FormInputComponent,
     select : FormSelectComponent,
     alertbox : FormAlertComponent
 }
