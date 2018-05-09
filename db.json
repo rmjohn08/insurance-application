@@ -161,7 +161,8 @@
         "validator":"canQuoteState",
         "placeHolder":"State",
         "classStyles":"",
-        "maxlength" : "2"
+        "maxlength" : "2",
+        "hint" : "NE"
       },
       {   
         "inputType":"text",
