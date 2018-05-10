@@ -120,7 +120,7 @@
       {   
         "inputType":"text",
         "label":"Address",
-        "regex":"",
+        "regex":"^\\d+\\s[A-z]+\\s[A-z]+",
         "required":true,
         "name":"address",
         "Key":"UWQ_Applicant_Residence_Address",
