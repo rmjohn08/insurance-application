@@ -10,7 +10,7 @@
             {
                 "component":"applicant-name",
                 "version":"1.0",
-                "columns":"1"
+                "columns":"2"
 
             }
 	    ]
@@ -100,6 +100,20 @@
         "maxlength" : "3"
         },
       {   
+        "inputType":"email",
+        "label":"Email",
+        "regex":"",
+        "required": true,
+        "name":"email",
+        "Key":"UWQ_Applicant_Email",
+        "text":"",
+        "placeHolder":"Email",
+        "classStyles":"control-med-width",
+        "max":"",
+        "options" : "",
+        "maxlength" : ""
+        },
+       {   
         "inputType":"alertbox",
         "label":"",
         "regex":"",
