@@ -30,7 +30,7 @@ export class FormControlValidatorService {
     if (it.max && it.max != '') {
       validators.push(Validators.max(it.max))
     }
-    if (it.isEmail && it.isEmail == 'true') {
+    if (it.inputType && it.inputType == 'email') {
       validators.push(Validators.email)
     }
     if (it.validator) { //<= add as many as needed
@@ -43,6 +43,18 @@ export class FormControlValidatorService {
   }
 }
 
+function isOnlist(control: FormControl) {
+  //control.value. //controlQuestion.value.controls
+}
+function availableOnList(control: FormControl, list: any[], val: any) {
+  var isQuotable = Array.from(list).includes(val);
+  if (isQuotable) {
+    return null;
+  } else {
+    return { validStates: val.toString};
+  }
+
+}
 
 function canQuoteState(control: FormControl) {
   let states = ['NE','IA','SD','GA','FL']; 

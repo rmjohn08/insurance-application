@@ -7,6 +7,7 @@ export interface ControlModel
     name: string,
     Key?: string,
     text?: string,
+    options?: string[],
     placeHolder?: string,
     classStyles?: string,
     showCondition?: string,
@@ -14,6 +15,7 @@ export interface ControlModel
     isEmail? : true,
     maxlength? : string,
     hint? : string,
+    validList? : string[]
     
 }
 

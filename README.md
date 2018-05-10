@@ -1,3 +1,11 @@
+Prototype for concepts on eapp form validation redesign.  
+What I am using here is Angular 5 with Material Design.  MD is in beta and evolving but it is 
+gaining more support on new angular versions (v6). MD is a specification for a unified system of 
+visual, motion, and interaction design that adapts across different devices, and the goal is to deliver
+lightweight UI elements.  
+-- took samples of a couple screens we used in some of the eapps 
+-- 
+
 # InsuranceApplication
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
@@ -13,7 +21,8 @@ npm install bootstrap@4.0.0-beta2 jquery pipper font-awesome --save
 ## material design - not required, already included
 npm install --save @angular/material @angular/cdk @angular/animations
 
-
+## install development project libs
+Run `npm install` to install all dependencies  
 
 ## Development server
 
