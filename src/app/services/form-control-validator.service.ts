@@ -23,7 +23,9 @@ export class FormControlValidatorService {
       validators.push(Validators.required);
     }
     if (it.regex && it.regex != '') {
-      validators.push(Validators.pattern(it.regex))
+     let reg: string = it.regex;
+     
+      validators.push(Validators.pattern(reg))
     }
     if (it.max && it.max != '') {
       validators.push(Validators.max(it.max))
