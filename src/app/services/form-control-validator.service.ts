@@ -5,9 +5,10 @@ import { ControlModel } from '../model/control-model';
 @Injectable()
 export class FormControlValidatorService {
   private customValidators = [];
+  private validList = [];
 
   constructor() { 
-    this.customValidators['canQuoteState'] = canQuoteState;
+    this.customValidators['isOnList'] = isOnList;
   }
 
   setupFormGroupControls(stepControl:FormGroup, controls:ControlModel[]) {
@@ -24,7 +25,6 @@ export class FormControlValidatorService {
     }
     if (it.regex && it.regex != '') {
      let reg: string = it.regex;
-     
       validators.push(Validators.pattern(reg))
     }
     if (it.max && it.max != '') {
@@ -34,6 +34,9 @@ export class FormControlValidatorService {
       validators.push(Validators.email)
     }
     if (it.validator) { //<= add as many as needed
+      if (it.validList && it.validList != '') {
+        this.validList[it.name] = it.validList;
+      }
       validators.push(this.customValidators[it.validator]);
     }
     if (validators.length>0)
@@ -43,15 +46,13 @@ export class FormControlValidatorService {
   }
 }
 
-function isOnlist(control: FormControl) {
-  //control.value. //controlQuestion.value.controls
-}
-function availableOnList(control: FormControl, list: any[], val: any) {
-  var isQuotable = Array.from(list).includes(val);
+function isOnList(control: FormControl) {
+  let state = control.value;
+  var isQuotable = false; //Array.from(this.validList[control]).includes(state);
   if (isQuotable) {
     return null;
   } else {
-    return { validStates: val.toString};
+    return { validStates: this.validList.toString};
   }
 
 }

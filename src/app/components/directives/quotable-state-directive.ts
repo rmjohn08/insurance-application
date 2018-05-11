@@ -15,7 +15,7 @@ import { Directive } from '@angular/core';
     ]
 })
 export class CanQuoteStateValidator implements Validator {
-    validator: ValidatorFn;
+    private validator: ValidatorFn;
 
     constructor() {
         this.validator = this.canQuoteState();
